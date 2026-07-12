@@ -3,34 +3,120 @@
     <head>
         <title>Unvariety</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
         <style type="text/css">
-            .warning {
-                background-color: yellow;
-                text-align: center;
-                margin: -10px;
-                padding: 10px;
+            body {
+                font-family: "Instrument Serif", serif;
             }
-            .actionbutton {
-                background-color: blueviolet;
+            .topbar {
+                border: 1px solid rgb(202, 202, 202);
+                display: flex;
+                padding: 20px;
+                margin: -10px;
+            }
+            .topbar a {
+                margin-left: 20px;
+                margin-right: 20px;
+                text-decoration: none;
+                color: black;
+            }
+            .greeter {
+                position: relative;
+                top: 75px;
+                text-align: center;
+            }
+            .glyph {
+                height: 350px;
+            }
+            .button {
+                font-family: "Instrument Serif", serif;
+                background-color: #353535;
                 color: white;
-                padding: 12px;
+                border: none;
+                font-size: 1rem;
+                width: 200px;
+                height: 50px;
+                margin: 100px;
+            }
+            .button:hover {
+                background-color: #616161;
+            }
+            .bottombox {
+                position: relative;
+                top: 100px;
+                width: 75%;
+                margin: auto;
+                display: flex;
+                flex-wrap: wrap;
+                flex-grow: 1;
+                flex-basis: auto;
+                align-items: center;
+                gap: 1rem;
+                justify-content: center;
+            }
+            .modal {
+                width: 100%;
+                height: 100%;
+                display: none;
+                background-color: #000000;
+                background-color: rgb(0,0,0,0.5);
+                position: absolute;
+                top: 0px;
+                left: 0px;
+            }
+            .modalinner {
+                width: 50%;
+                height: 200px;
+                color: black;
+                background-color: white;
+                margin: auto;
+                position: relative;
+                top: 100px;
+                padding: 20px;
+            }
+            .close {
+                float: right;
+                font-size: 1.5rem;
+            }
+            .close:hover,.close:focus {
                 cursor: pointer;
-                border-radius: 100px;
-                border: 0px;
             }
         </style>
     </head>
     <body>
-        <div class="warning">
-            My website is currently undergoing maintenance. Sorry for the inconvenience.
+        <div class = "topbar">
+            <a href="">Home</a>
+            <a href="">About</a>
+            <a href="">Projects</a>
         </div>
-        <div style="width: 75%; margin: auto;">
-            <div style="width: 70%;">
-                <br><br><br><br><br><br><br><br><br>
-                <p style="font-size: 2em;">Welcome to my <span style="color: blueviolet;">Website!</span></p>
-                <p>Hi I’m Nori and I offer technical services. I create mobile apps with android+kotlin and flutter+dart, and perform more general tasks like video editing and making your phone run faster.</p>
-                <button onclick="window.location.href='https://github.com/unvariety';" class="actionbutton">Go to Github Profile</button>
+        <div class="greeter">
+            <div style="font-size: 3.5rem;">Hi, I'm Nori</div>
+            <div style="font-size: 1.5rem;">IT Specialist</div>
+        </div>
+        <div class="bottombox">
+            <div><img class="glyph" src="./glyph.gif"></div>
+            <div><button class="button">Contact Me</button></div>
+        </div>
+        <div class="modal">
+            <div class="modalinner">
+                <span class="close">&times;</span>
+                <div style="font-size: 1.5rem;">Email</div>
+                <a href="mailto:nori.nastor@proton.me">nori.nastor@proton.me</a>
             </div>
         </div>
+        <script>
+            var button = document.getElementsByClassName("button")[0];
+            var modal = document.getElementsByClassName("modal")[0];
+            var close = document.getElementsByClassName("close")[0];
+
+            button.onclick = function() {
+                modal.style.display = "block";
+            }
+            close.onclick = function() {
+                modal.style.display = "none";
+            }
+        </script>
     </body>
 </html>
